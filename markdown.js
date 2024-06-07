@@ -8,11 +8,14 @@ import Snarkdown from 'snarkdown';
 class TagarogguCEMarkdown extends HTMLElement {
     constructor() {
         super();
-        this.mutationObserver = new MutationObserver(() => {
-            this.shadowRoot.innerHTML = Snarkdown(this.textContent);
-        });
+        this.mutationObserver = new MutationObserver(() => this.textChange());
         this.attachShadow({ mode: 'open' });
         this.mutationObserver.observe(this, { characterData: true, childList: true });
+        this.textChange();
+    }
+
+    textChange() {
+        this.shadowRoot.innerHTML = Snarkdown(this.textContent);
     }
 }
 
