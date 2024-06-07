@@ -1,0 +1,16 @@
+{
+    "name": "@tagaroggu/ce",
+    "version": "0.0.0",
+    "type": "module",
+    "exports": {
+        "./markdown": "./markdown.js"
+    },
+    "peerDependencies": {
+        "snarkdown": "^2.0.0"
+    },
+    "peerDependenciesMeta": {
+        "snarkdown": {
+            "optional": true
+        }
+    }
+}
